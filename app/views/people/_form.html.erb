@@ -1,0 +1,37 @@
+<%= form_with model: person do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% person.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :contact %><br>
+    <%= form.text_area :contact %><br>
+    <% person.errors.full_messages_for(:contact).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :department %><br>
+    <%= form.text_area :department %><br>
+    <% person.errors.full_messages_for(:department).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :manager %><br>
+    <%= form.text_area :manager %><br>
+    <% person.errors.full_messages_for(:manager).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
