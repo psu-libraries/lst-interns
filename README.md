@@ -1,0 +1,2 @@
+# lst-interns
+Temporary Repository being used to help teach our interns about git, github and our workflows
