@@ -1,7 +1,24 @@
-# lst-interns
-Temporary Repository being used to help teach our interns about git, github and our workflows
+# README
 
-and an update
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Fabian
-Sarah
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
