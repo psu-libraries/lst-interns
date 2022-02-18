@@ -3,7 +3,7 @@ class CreatePeople < ActiveRecord::Migration[7.0]
     create_table :people do |t|
       t.string :name
       t.string :contact
-      t.string :department
+      t.string :department 
       t.string :manager
 
       t.timestamps

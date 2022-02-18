@@ -1,5 +1,6 @@
 <h1><%= @person.name %></h1>
-<p>Contact: <%= @person.contact %></p>
+<% #@person.convertPhone(@person.contact) %>
+<p>Contact: <%= number_to_phone(@person.contact, area_code: true) %></p>
 <p>Team: <%= @person.department %></p>
 <p>Manager: <%= @person.manager %></p>
 <br>

@@ -42,7 +42,7 @@ class PeopleController < ApplicationController
 
     redirect_to root_path, status: :see_other
   end
-  
+
   private
   def person_params
     params.require(:person).permit(:name, :contact, :department, :manager)
