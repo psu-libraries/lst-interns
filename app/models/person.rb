@@ -4,8 +4,6 @@ class Person < ApplicationRecord
   validates :department, presence: true
   validates :manager, presence: true
 
-  attr_writer :contact
-
 #start test method
 #  def convertPhone(contact)
 #    @contact = contact
