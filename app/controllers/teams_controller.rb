@@ -1,21 +1,21 @@
 class TeamsController < ApplicationController
   
   def index
-    @pteams = Team.all
+    @teams = Team.all
   end
 
   def show
-    @teams = Team.find(params[:id])
+    @team = Team.find(params[:id])
   end
 
   def new
-    @teams = Team.new
+    @team = Team.new
   end
 
   def create
-    @teams = Team.new(team_params)
+    @team = Team.new(team_params)
 
-    if @teams.save
+    if @team.save
       redirect_to @team
     else
       render :new, status: :unprocessable_entity
@@ -23,11 +23,11 @@ class TeamsController < ApplicationController
   end
 
   def edit
-    @teams = Team.find(params[:id])
+    @team = Team.find(params[:id])
   end
 
   def update
-    @teams = Team.find(params[:id])
+    @team = Team.find(params[:id])
 
     if @team.update(team_params)
       redirect_to @team

@@ -1,20 +1,6 @@
 <h1> LST Emergency Contacts </h1>
 
-<table>
-  <thead>
-    <tr>
-    <% @people.each do |person| %>
-    <th>
-      <%= link_to person.name, person %>
-      <%= person.contact %>
-      <! <%= person.department %> >
-    </th>
-    <% end %>
-    </tr>
-  </thead>
-</table>
-
-<! <ul>
+<ul>
 <% @people.each do |person| %>
   <li>
     <%= link_to person.name, person %>
@@ -22,6 +8,6 @@
     <! <%= person.department %> >
   </li>
   <% end %>
-</ul> >
+</ul>
 
 <%= link_to "Add Employee", new_person_path %>
