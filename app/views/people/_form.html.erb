@@ -44,14 +44,6 @@
   </div>
 
   <div>
-    <%= form.label :manager %><br>
-    <%= form.text_area :manager %>
-    <% person.errors.full_messages_for(:manager).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
     <%= form.submit %>
   </div>
 <% end %>
