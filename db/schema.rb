@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_18_194351) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_02_18_193703) do
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "contact"
@@ -19,6 +21,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_18_194351) do
     t.integer "team_id"
     t.integer "manager"
     t.boolean "ismanagement"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "team"
+    t.integer "manager"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

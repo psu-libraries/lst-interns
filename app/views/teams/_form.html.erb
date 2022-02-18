@@ -1,0 +1,14 @@
+<%= form_with model: team do |form| %>
+  <div>
+    <%= form.label :team %><br>
+    <%= form.text_field :team %><br>
+    <% team.errors.full_messages_for(:team).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

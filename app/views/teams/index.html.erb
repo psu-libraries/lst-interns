@@ -1,0 +1,11 @@
+<h1> LST Emergency Contacts </h1>
+
+<ul>
+<% @teams.each do |team| %>
+  <li>
+    <%= link_to team.team, team %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add Team", new_team_path %>
