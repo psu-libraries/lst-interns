@@ -9,7 +9,9 @@
   </div>
 
   <div>
-     Contact Number ex. 123-456-7890<br>
+
+    <%= form.label :contact %><br>
+    Phone Number ex. 2225557890<br>
     <%= form.text_field :contact %><br>
     <% person.errors.full_messages_for(:contact).each do |message| %>
       <div><%= message %></div>
@@ -18,9 +20,25 @@
   </div>
 
   <div>
-    <%= form.label :department %><br>
-    <%= form.text_area :department %>
-    <% person.errors.full_messages_for(:department).each do |message| %>
+    <%= form.label :team_id %><br>
+    <%= form.text_area :team_id %>
+    <% person.errors.full_messages_for(:team_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :manager %><br>
+    <%= form.text_area :manager %>
+    <% person.errors.full_messages_for(:manager).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :ismanagement %><br>
+    <%= form.text_area :ismanagement %>
+    <% person.errors.full_messages_for(:ismanagement).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>

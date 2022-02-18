@@ -4,8 +4,7 @@
 <% @people.each do |person| %>
   <li>
     <%= link_to person.name, person %>
-    <%= person.contact %>
-    <! <%= person.department %> >
+    <%= number_to_phone(person.contact) %>
   </li>
   <% end %>
 </ul>
