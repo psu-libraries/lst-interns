@@ -1,3 +1,8 @@
 <h1>Edit Team</h1>
 
 <%= render "form", team: @team %>
+
+<p><%= link_to "Back to Directory", team_path %>  |  <%= link_to "Delete", team_path(@team), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+} %></p>
