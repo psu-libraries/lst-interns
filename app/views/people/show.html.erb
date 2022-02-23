@@ -2,7 +2,7 @@
 
 <p>Contact: <%= number_to_phone(@person.contact) %></p>
 <p>Team: <%= @person.team.team %></p>
-<p>Manager: <%= @person.manager %></p>
+<p>Manager: <%= Person.find(@person.manager).name %></p>
 <p>Is Management: <%= @person.ismanagement %> </p>
 <br>
 <p><%= link_to "Back to Directory", people_path %>  |  <%= link_to "Edit", edit_person_path(@person) %>  |  <%= link_to "Delete", person_path(@person), data: {
