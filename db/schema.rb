@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_18_194351) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_23_160557) do
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "team_id"
     t.integer "manager"
     t.boolean "ismanagement"
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_people_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -28,4 +29,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_18_194351) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "people", "teams"
 end

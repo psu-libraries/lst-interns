@@ -1,7 +1,7 @@
 <h1><%= @person.name %></h1>
 
 <p>Contact: <%= number_to_phone(@person.contact) %></p>
-<p>Team: <%= @person.team_id %></p>
+<p>Team: <%= @person.index_people_on_team_id.team %></p>
 <p>Manager: <%= @person.manager %></p>
 <p>Is Management: <%= @person.ismanagement %> </p>
 <br>
