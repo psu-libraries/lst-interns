@@ -9,6 +9,15 @@
   </div>
 
   <div>
+    <%= form.label :manager %><br>
+    <%= form.text_field :manager %><br>
+    <% team.errors.full_messages_for(:manager).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <br>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
