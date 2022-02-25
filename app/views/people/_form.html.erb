@@ -27,15 +27,15 @@
       <div><%= message %></div>
     <% end %>
   </div>
-
+<br>
   <div>
     <%= form.label :ismanagement %><br>
-    <%= form.text_area :ismanagement %>
+    <%= form.text_field :ismanagement %>
     <% person.errors.full_messages_for(:ismanagement).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
-
+<br>
   <div>
     <%= form.submit %>
   </div>

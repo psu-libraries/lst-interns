@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root "people#index"
+
+  root "teams#index"
   get "/management", to: "people#management"
+
 
   resources :people
   resources :teams
