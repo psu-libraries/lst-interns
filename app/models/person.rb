@@ -8,11 +8,5 @@ class Person < ApplicationRecord
 #  validates :manager, presence: true
 #  validates :ismanagement, presence: true
 
-#start test method
-#  def convertPhone(contact)
-#    @contact = contact
-#    :contact => @contact.delete "-"
-#    :contact = number_to_phone(@contact, area_code: true)
-#  end
 
 end
