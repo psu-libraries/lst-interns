@@ -2,16 +2,18 @@
 
 <p>Contact: <%= number_to_phone(@person.contact) %></p>
 <p>Team: <%= @person.team.team %></p>
-<p>Manager: <%= Person.find(@person.manager).name %></p>
 
 <div>
-<%= @person.ismanagement ? "Manages" : "Not manager" %>
+<%= @person.ismanagement ? "Manages" : "" %>
 <% if @person.ismanagement %>
   <% Team.where(manager: @person.id).each do |team| %>
     : <%= team.team %>
   <% end %>
 <% end %>
 </div>
+
+<p>Manager: <%= Person.find(@person.manager).name %></p>
+
 <br>
 <p><%= link_to "Back to Directory", people_path %>  |  <%= link_to "Edit", edit_person_path(@person) %>  |  <%= link_to "Delete", person_path(@person), data: {
   turbo_method: :delete,
