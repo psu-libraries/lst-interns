@@ -10,6 +10,7 @@ class PeopleController < ApplicationController
 
   def new
     @person = Person.new
+    #will need to get teams from teams controller, pass teams object to new erb template
   end
 
   def create
