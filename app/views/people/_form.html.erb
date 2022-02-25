@@ -21,7 +21,9 @@
 
   <div>
     <%= form.label :team_id %><br>
-    <%= form.text_area :team_id #form.select%>
+    <%= form.collection_select :teams, @teams.each do |team| %>
+    <% end %>
+    <%# <%= form.text_area :team_id %> %>
     <% person.errors.full_messages_for(:team_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
