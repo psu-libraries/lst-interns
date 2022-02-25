@@ -1,6 +1,6 @@
 <h1><%= @team.team %></h1>
 
-<p>Manager: <%= @team.manager %></p>
+<p>Manager: <%= Person.find(@team.manager).name %></p>
 <br>
 <p><%= link_to "Back to Directory", teams_path %>  |  <%= link_to "Edit", edit_team_path(@team) %>  |  <%= link_to "Delete", team_path(@team), data: {
   turbo_method: :delete,
