@@ -10,7 +10,21 @@
 
   <div>
     <%= form.label :manager %><br>
-    <%= form.text_field :manager %><br>
+
+    <% for team in Team.all do %>
+      <% if team.team == "Management" %>
+        <% manage_id = team.id %>
+      <% end %>
+    <% end %>
+
+    <% people_array = Array.new %>
+    <% for person in Person.all do %>
+      <% if person.team_id == manage_id %>
+        <% people_array.push([person.name, person.id]) %>
+      <% end %>
+    <% end %>
+
+    <%= form.select :manager, people_array %><br>
     <% team.errors.full_messages_for(:manager).each do |message| %>
       <div><%= message %></div>
     <% end %>

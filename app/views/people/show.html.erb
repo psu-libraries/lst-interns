@@ -12,7 +12,7 @@
 <% end %>
 </div>
 
-<p>Manager: <%= Person.find(@person.manager).name %></p>
+<p>Manager: <%= Person.find(@person.team.manager).name %></p>
 
 <br>
 <p><%= link_to "Back to Directory", people_path %>  |  <%= link_to "Edit", edit_person_path(@person) %>  |  <%= link_to "Delete", person_path(@person), data: {
