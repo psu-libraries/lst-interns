@@ -1,7 +1,9 @@
 <h1><%= @person.name %></h1>
 
+<% @manager = Person.find(@person.team.manager) %>
 <% @person.team.team == "Management" ? @person.ismanagement = true : @person.ismanagement = false %>
-<% @person.manager = Person.find(@person.team.manager).id %>
+<% @person.manager = @manager.id %>
+
 
 <p>Contact: <%= number_to_phone(@person.contact) %></p>
 <p>Team: <%= @person.team.team %></p>
@@ -15,7 +17,7 @@
 <% end %>
 </div>
 
-<p>Manager: <%= Person.find(@person.team.manager).name %></p>
+<p>Manager: <%= link_to @manager.name, @manager %></p>
 
 <br>
 <p><%= link_to "Back to Directory", teams_path %>  |
