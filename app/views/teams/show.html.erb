@@ -1,8 +1,24 @@
 <h1><%= @team.team %></h1>
-
+<% manager = Person.find(@team.manager) %>
 <p>Manager: <%= Person.find(@team.manager).name %></p>
+
+<ul>
+  <li>
+    <%= link_to manager.name, manager %>
+    <%= number_to_phone(manager.contact) %>
+  </li>
+  <% for person in Person.all %>
+    <% if person.team_id == @team.id %>
+  <li>
+    <%= link_to person.name, person %>
+    <%= number_to_phone(person.contact) %>
+  </li>
+    <% end %>
+  <% end %>
+</ul>
+
 <br>
 <p><%= link_to "Back to Directory", teams_path %>  |  <%= link_to "Edit", edit_team_path(@team) %>  |  <%= link_to "Delete", team_path(@team), data: {
   turbo_method: :delete,
   turbo_confirm: "Are you sure?"
-} %></p>
+} %> | <%= link_to "Add Employee", new_person_path %> </p>

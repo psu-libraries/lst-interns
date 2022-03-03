@@ -21,19 +21,21 @@
 
   <div>
     <%= form.label :team_id %><br>
-    <%= form.text_field :team_id %>
+
+    <% #id_array = [["Management", "7"], ["Development", "4"], ["USO", "2"]] %>
+    <% id_array = Array.new %>
+    <% for t in Team.all do %>
+    <% id_array.push([t.team, t.id]) %>
+    <% end %>
+
+
+    <%= form.select :team_id, id_array %>
     <% person.errors.full_messages_for(:team_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 <br>
-  <div>
-    <%= form.label :ismanagement %><br>
-    <%= form.text_field :ismanagement %>
-    <% person.errors.full_messages_for(:ismanagement).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+
 <br>
   <div>
     <%= form.submit %>

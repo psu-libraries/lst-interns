@@ -2,7 +2,19 @@
 
 <%= render "form", person: @person %>
 
-<p><%= link_to "Back to Directory", people_path %> |  <%= link_to "Delete", person_path(@person), data: {
+
+<p><%= link_to "Back to Directory", teams_path %> |
+
+  <% if @person.ismanagement %>
+    <% Team.where(manager: @person.id).each do |team| %>
+      <% message = "Back to " + team.team %>
+      <%= link_to message, team %> |
+    <% end %>
+  <% else %>
+    <%= link_to "Back to Team", @person.team %> |
+  <% end %>
+
+  <%= link_to "Delete", person_path(@person), data: {
   turbo_method: :delete,
   turbo_confirm: "Are you sure?"
 } %></p>
