@@ -1,5 +1,8 @@
 <h1><%= @person.name %></h1>
 
+<% @person.team.team == "Management" ? @person.ismanagement = true : @person.ismanagement = false %>
+<% @person.manager = Person.find(@person.team.manager).id %>
+
 <p>Contact: <%= number_to_phone(@person.contact) %></p>
 <p>Team: <%= @person.team.team %></p>
 

@@ -35,13 +35,7 @@
     <% end %>
   </div>
 <br>
-  <div>
-    Are they a manager?<br>
-    <%= form.select :ismanagement, [["Yes", "true"], ["No", "false"]] %>
-    <% person.errors.full_messages_for(:ismanagement).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+
 <br>
   <div>
     <%= form.submit %>
