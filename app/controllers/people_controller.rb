@@ -6,6 +6,10 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+    @manager = Person.find(@person.team.manager)
+    @person.team.team == "Management" ? @person.ismanagement = true : @person.ismanagement = false
+    @person.manager = @manager.id
+
   end
 
   def new
