@@ -1,14 +1,20 @@
 
 <h1> LST Emergency Contacts </h1>
 
-<ul>
-<% @people.each do |person| %>
-  <li>
-    <%= link_to person.name, person %>
-    <%= number_to_phone(person.contact) %>
-  </li>
+<h3> Search by name: </h3>
+  <%= form_tag(people_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search") %>
   <% end %>
-</ul>
+
+  <ul>
+  <% @people.each do |person| %>
+    <li>
+      <%= link_to person.name, person %>
+      <%= number_to_phone(person.contact) %>
+    </li>
+    <% end %>
+  </ul>
 
 <%= link_to "Add Employee", new_person_path %>  |
 <%= link_to "Back to Teams", teams_path %>

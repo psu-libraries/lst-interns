@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
 
   def index
-    @people = Person.all
+    @people = Person.search(params[:search])
   end
 
   def show
@@ -46,7 +46,7 @@ class PeopleController < ApplicationController
 
   private
   def person_params
-    params.require(:person).permit(:name, :contact, :team_id, :manager, :ismanagement)
+    params.require(:person).permit(:name, :contact, :team_id, :manager, :ismanagement, :search)
   end
 
 end

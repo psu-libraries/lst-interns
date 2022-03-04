@@ -3,7 +3,21 @@ class Person < ApplicationRecord
   validates :contact, presence: true, length: {minimum:10}
 
   belongs_to :team, class_name: "Team", foreign_key: "team_id"
+  
 
+  def self.search(search)
+    if search
+      person_name = Person.find_by(name: search)
+      if person_name
+        self.where(id: person_name)
+      else
+        Person.all
+      end
+    else
+      Person.all
+    end
+  end
+  
 #  validates :team_id, presence: true
 #  validates :manager, presence: true
 #  validates :ismanagement, presence: true
