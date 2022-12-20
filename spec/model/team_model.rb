@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Team, type: :model do
-    let(:new_team) do Team.new(id: 1, team: "123", manager: 2)
+    let(:new_team) do 
+        Team.new(id: 1, team: "123", manager: 2)
     end
 
     it 'Team module has team equal to 123' do
