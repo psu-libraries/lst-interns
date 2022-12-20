@@ -7,15 +7,19 @@ RSpec.describe 'Add Team', type: :feature do
       visit '/teams/new'
     end
 
-    it 'text box' do
+    it 'Has text box' do
         expect(page).to have_selector 'input#team_team'
     end
 
-    it 'create team button' do
+    it 'Has create team button' do
         expect(page).to have_button 'Create Team'
     end
 
-    it '' do
+    it 'Has back to Directory link' do
         expect(page).to have_link 'Back to Directory'
+    end
+
+    it 'Has Manager dropdown' do
+        expect(page).to have_selector 'select#team_manager'
     end
 end
