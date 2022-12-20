@@ -18,4 +18,8 @@ RSpec.describe 'Add Team', type: :feature do
     it 'Has back to Directory link' do
         expect(page).to have_link 'Back to Directory'
     end
+
+    it 'Has Manager dropdown' do
+        expect(page).to have_selector 'select#team_manager'
+    end
 end
