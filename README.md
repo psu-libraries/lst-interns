@@ -22,3 +22,23 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+## Install Recommended VS Code Extensions
+1. Open this repo in VS Code
+
+2. In the bottom right, VS Code will show suggested extensions
+
+3. Click Install
+
+
+### Adding Recommended Extensions
+1. Open this repo in VS Code
+
+2. Double check your branch
+
+3. In VS Code, go to Settings then Extensions
+
+4. In the extensions you you like to add, select the settings button (next to uninstall)
+
+5. Select “Add to Workspace Recommendations”

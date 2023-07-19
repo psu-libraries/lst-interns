@@ -1,0 +1,15 @@
+
+
+{
+  "recommendations": [
+    "mcright.auto-save",
+    "streetsidesoftware.code-spell-checker",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "oderwat.indent-rainbow",
+    "ms-vsliveshare.vsliveshare",
+    "esbenp.prettier-vscode",
+    "bung87.rails",
+    "aaron-bond.better-comments"
+]
+}
